@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavenly Gamer E-commerce Site</title>
+    <link rel="icon" href="original.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-image: url("adce9e5f66922faf24a16da02da74167.gif");
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            backdrop-filter: blur(30px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        header {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            text-align: center;
+            z-index: 9999;
+            position: relative;
+        }
+
+        header img {
+            width: 90px;
+            height: 90px;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 40px;
+            text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 12px 20px;
+            margin: 0 15px;
+            text-decoration: none;
+            border-radius: 20px;
+            background-color: #555;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #777;
+            transform: scale(1.1);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 30px 20px;
+            max-width: 1200px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .box {
+            width: 100%;
+
+            max-width: 450px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+
+        .box h2 {
+            font-size: 30px;
+            border: white 2px solid;
+            padding: 5px 14px 5px ;
+            border-radius: 10px;
+            background: #000;
+            color: #fff;
+            margin-bottom: 15px;
+            text-align: center;
+            margin-bottom: 80px;
+            margin-top: 70px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+        }
+
+        .box p {
+            color: #ddd;
+            font-size: 16px;
+            width: 400px;
+            line-height: 1.6;
+            text-align: justify;
+            padding: 10px; 
+            background: rgba(200, 148, 161, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #outerbox {
+           
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin: 0 auto;
+        }
+
+        #sliderbox {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 510px;
+            animation: slider 40s infinite linear;
+        }
+
+        #sliderbox img {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes slider {
+
+            0%,
+            10% {
+                transform: translateX(0);
+            }
+
+            12.5%,
+            22.5% {
+                transform: translateX(-100%);
+            }
+
+            25%,
+            35% {
+                transform: translateX(-200%);
+            }
+
+            37.5%,
+            47.5% {
+                transform: translateX(-300%);
+            }
+
+            50%,
+            60% {
+                transform: translateX(-400%);
+            }
+
+            62.5%,
+            72.5% {
+                transform: translateX(-500%);
+            }
+
+            75%,
+            85% {
+                transform: translateX(-600%);
+            }
+
+            87.5%,
+            97.5% {
+                transform: translateX(-700%);
+            }
+
+            100% {
+                transform: translateX(-800%);
+            }
+        }
+
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #00ffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #ffcc00;
+        }
+
+        footer img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .open-modal {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ffd700;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            transform: scale(1);
+        }
+
+        .open-modal:hover {
+            background: #333;
+            color: #ffd700;
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .modal-toggle {
+            display: none;
+        }
+
+        .modal-toggle:checked+.modal {
+            display: block;
+        }
+
+       
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 5px 10px 10px;
+            text-align: center;
+            color: rgb(0, 0, 0);
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"] {
+            padding: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #28a745;
+            border: none;
+            padding: 10px;
+            color: #f4f4f4;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .register-link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: none;
+        }
+
+        .modal-content {
+            background-color: #555;
+            color: #000000;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 350px;
+            border-radius: 5px;
+            position: relative;
+            border-radius: 30px;
+            box-shadow: 1px 5px 15px;
+        }
+
+        .modal-content h2 {
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        label {
+            margin-right: 10px;
+            width: 100px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            flex-grow: 1;
+        }
+
+        button[type="submit"] {
+            background-color: #28a745;
+            border: none;
+            padding: 10px;
+            color: #f4f4f4;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .register-link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="original.png" alt="Heavenly Games Store Logo">
+            <h1>Heavenly Games Store</h1>
+            <label for="modal-toggle" class="open-modal">Login</label>
+            <label for="modal-toggle-register" class="open-modal">Register</label>
+
+            <input type="checkbox" id="modal-toggle" class="modal-toggle">
+            <div class="modal">
+                <div class="modal-content">
+                    <label for="modal-toggle" class="close">&times;</label>
+                    <h2>Log-in Form</h2>
+                    <form>
+                        <input type="text" id="username" name="username" required>
+                       <center><label for="username">Username:</label></center>  
+                        <input type="password" id="password" name="password" required>
+                        <center><label for="password">Password:</label></center>  
+                        <button type="submit">Submit</button>
+                        <div class="register-link">
+                            Don't have an account? <a href="fixxing.html">Register here!</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <input type="checkbox" id="modal-toggle-register" class="modal-toggle">
+            <div class="modal">
+                <div class="modal-content">
+                    <label for="modal-toggle-register" class="close">&times;</label>
+                    <h2>Registration form</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="text" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">First Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name:</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthday">Birthdate:</label>
+                            <input type="date" id="birthday" name="birthday" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <button type="submit">Save</button>
+                        <div class="register-link">
+                            Already have an account? <a href="fixxing.html">Login here!</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="fixxing.html"> <i class="fas fa-home"></i> Home </a>
+        <a href="about us.html"> <i class="fas fa-info-circle"></i> About Us </a>
+        <a href="lab2.html"> <i class="fas fa-gamepad"></i> Games </a>
+    </nav>
+
+    <div class="container">
+        <div class="box">
+            <h2>Welcome to Heavenly Games Store</h2>
+            <center><p>Heavenly Games Store is your gateway to the best gaming experience. Explore action-packed adventures,
+                immersive RPGs, and a vast selection of indie games! We offer high-quality titles that suit every
+                gamer’s preference. Let’s dive into the world of gaming!</p></center>
+        </div>
+
+        <div class="box">
+            <div id="outerbox">
+                <div id="sliderbox">
+                    <img src="FICKGFAJDOUSMMU.webp" alt="Image 1">
+                    <img src="amoguslandscape_2560x1440-3fac17e8bb45d81ec9b2c24655758075.jpeg" alt="Image 2">
+                    <img src="cod-black-ops-6-vault-edition.webp" alt="Image 3">
+                    <img src="06f9b422-9489-42bc-bea0-00fdcda498b8.jpg" alt="Image 4">
+                    <img src="forza-horizon-5-button-fin-1629830068379.jpg" alt="Image 5">
+                    <img src="305785-The_Texas_Chain_Saw_Massacre-movies-horror.jpg" alt="Image 6">
+                    <img src="OIP (5).jpeg" alt="Image 7">
+                    <img src="ghost-of-tsushima.jpg" alt="Image 8">
+                    <img src="hades_3277133b.jpg" alt="Image 9">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <img src="original.png" alt="Heavenly Games Logo">
+        <p>© 2024 Heavenly Games Store. All Rights Reserved.</p>
+        <a href="contact.html">Contact Us</a>
+    </footer>
+
+</body>
+
+</html>

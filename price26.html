@@ -1,0 +1,261 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sekiro: Shadows Die Twice</title>
+   
+</head>
+<style>
+    body {
+            
+            background-image: url('sekiro---button-1536103897438.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            
+    }
+    .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            border-radius: 10px;
+            padding: 20px;
+            background: rgba(75, 36, 36, 0.7);
+            box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .images {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .imahe {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 5px;
+            border: 2px solid black;
+            height: 300px;
+        }
+        .slideshow-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .slideshow-buttons span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgb(185, 12, 12);
+        }
+
+        .pick {
+            text-transform: uppercase;
+            font-size: 16px;
+            color: rgb(0, 0, 0);
+            box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            background: #d1abab;
+            margin-top: 20px;
+        }
+
+        .sizes {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .size {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 22%;
+            min-width: 120px;
+            height: 120px;
+            padding: 10px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .size img {
+            max-width: 50px;
+            max-height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .size:hover {
+            background: rgb(241, 192, 192);
+            color: rgb(7, 3, 3);
+            transform: scale(1.1);
+        }
+
+        .product {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            color: rgb(0, 0, 0);
+            text-shadow: 1px 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 10px 20px;
+            gap: 5px;
+            width: 45%;
+        }
+
+        .par2, h3, .description {
+            background: #d1abab;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+            text-transform: uppercase;
+            border-radius: 10px;
+            box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.2);
+            margin: 5px 0;
+            width: 100%;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+            margin-top: 5px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .add, .back {
+            width: 150px;
+            font-family: 'Segoe', 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', 'Verdana', sans-serif;
+            text-transform: uppercase;
+            background: #d1abab;
+            box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add:hover, .back:hover {
+            background: #b57a7a;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .images, .product {
+                width: 100%;
+                margin: 0;
+                padding: 10px;
+            }
+
+            .imahe {
+                max-width: 250px;
+            }
+
+            .size {
+                width: 45%;
+                height: 100px;
+                font-size: 12px;
+                padding: 8px 5px;
+            }
+
+            .slideshow-buttons {
+                margin-top: 10px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .add, .back {
+                width: 100%;
+            }
+
+            .par2, h3, .description {
+                font-size: 20px;
+                width: 100%;
+                padding: 10px;
+                margin-top: 10px;
+            }
+        }
+</style>
+
+<body>
+    <div class="container">
+        <div class="images">
+            <img alt="" src="sekiro---button-1536103897438.jpg" class="imahe">
+            <div class="slideshow-buttons">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p class="pick">Play On</p>
+            <div class="sizes">
+                <span class="size"><img src="8d23750e726d216b9a0e0738e4cf8db9.png"  width="40" height="40" /></span>
+                <span class="size"><img src="io2998i18e-ios-logo-ios-app-development-company-india-magicbyte-solutions.png"  width="40" height="40" /></span>
+                <span class="size"><img src="PlayStation-logo.jpg" width="40" height="40" /></span>
+                <span class="size"><img src="OIP (11).jpeg" width="40" height="40" /></span>
+                
+               
+                
+            </div>
+        </div>
+        <div class="product">
+            <p class="par2">Sekiro: Shadows Die Twice</p>
+            <h3>Php2,800.00</h3>
+            <p class="description">
+                Immerse yourself in the world of *Sekiro: Shadows Die Twice* on PlayStation, PC, Xbox, iOS, or Android. 
+                Play as a shinobi named Sekiro, tasked with rescuing his kidnapped lord and exacting revenge on his enemies. 
+                Set in a reimagined late 1500s Japan, this action-adventure game challenges you to master combat, stealth, and exploration in a brutal, beautiful world.
+            </p>
+            
+            <p class="description">
+                Download now and begin your journey of vengeance and redemption! ⚔️🗡️
+            </p>
+            
+            <div class="buttons">
+                <button class="add">Add to Cart</button>
+                <a href="lab2.html"><button class="back">Back</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
